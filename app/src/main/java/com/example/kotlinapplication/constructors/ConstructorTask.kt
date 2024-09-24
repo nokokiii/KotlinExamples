@@ -7,6 +7,10 @@ class Book(val title: String, val author: String, val publicationYear: Int, val 
     // Pozostałym parametrom nadaj domyślne wartości.
     // 2. Zdefiniuj secondary constructor, który będzie przyjmował tytuł, autora i liczbę stron jako parametry
 
+    constructor(title: String, author: String) : this(title, author, 0, 0) {}
+
+    constructor(title: String, author: String, pages: Int) : this(title, author, 0, pages) {}
+
     fun bookSummary(): String {
         return """
             Title: $title
@@ -20,10 +24,10 @@ class Book(val title: String, val author: String, val publicationYear: Int, val 
 fun main() {
     val book1 = Book("1984", "George Orwell", 1949, 328)
     // TODO: odkomentuj
-//    val book2 = Book("The Catcher in the Rye", "J.D. Salinger")
-//    val book3 = Book("Brave New World", "Aldous Huxley", 268)
+    val book2 = Book("The Catcher in the Rye", "J.D. Salinger")
+    val book3 = Book("Brave New World", "Aldous Huxley", 268)
 
     println(book1.bookSummary())
-//    println(book2.bookSummary())
-//    println(book3.bookSummary())
+    println(book2.bookSummary())
+    println(book3.bookSummary())
 }
