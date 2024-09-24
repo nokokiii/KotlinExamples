@@ -8,6 +8,9 @@ fun sortPeople(people: List<Person>, comparator: Comparator<Person>): List<Perso
 
 // TODO:
 // 1. Dodaj komparatory dla imion, wieku i wzrostu
+val nameComparator = Comparator<Person> { a, b -> a!!.name.compareTo(b!!.name) }
+val ageComparator = Comparator<Person> { a, b -> a!!.age.compareTo(b!!.age) }
+val heightComparator = Comparator<Person> { a, b -> a!!.height.compareTo(b!!.height) }
 
 fun main() {
     val people = listOf(
@@ -18,12 +21,12 @@ fun main() {
     )
 
     // TODO: odkomentuj
-//    println("Sorted by name:")
-//    sortPeople(people, nameComparator).forEach { println(it) }
-//
-//    println("\nSorted by age:")
-//    sortPeople(people, ageComparator).forEach { println(it) }
-//
-//    println("\nSorted by height:")
-//    sortPeople(people, heightComparator).forEach { println(it) }
+    println("Sorted by name:")
+    sortPeople(people, nameComparator).forEach { println(it) }
+
+    println("\nSorted by age:")
+    sortPeople(people, ageComparator).forEach { println(it) }
+
+    println("\nSorted by height:")
+    sortPeople(people, heightComparator).forEach { println(it) }
 }
