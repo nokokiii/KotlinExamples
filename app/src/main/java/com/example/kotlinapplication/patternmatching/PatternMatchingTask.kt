@@ -8,8 +8,12 @@ package com.example.kotlinapplication.patternmatching
 // - wszystkie wartości w liście są ujemne
 // - lista zawiera liczbę 0
 // - lista zawiera zarówno waartości dodatnie jak i ujemne
-private fun analyzeList(numbers: List<Int>): String {
-    return ""
+private fun analyzeList(numbers: List<Int>) : String = when {
+    numbers.isEmpty() -> "Lista jest pusta"
+    numbers.all { it > 0 } -> "Wszystkie wartiości są dodatnie"
+    numbers.all { it < 0 } -> "Wszystkie wartiości są ujemne"
+    0 in numbers -> "0 zawiera się w liście"
+    else -> "Lista zawiera wartości ujemne i dodatnie"
 }
 
 fun main() {
