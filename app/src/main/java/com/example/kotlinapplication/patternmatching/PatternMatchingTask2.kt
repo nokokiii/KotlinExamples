@@ -11,8 +11,8 @@ import java.util.Scanner
 // - Powyżej 500 - 15%
 private fun getDiscountPercentage(amount: Double): Double = when {
     amount < 50 -> 0.0
-    50 <= amount && amount < 100 -> 0.05
-    100 <= amount && amount < 500 -> 0.1
+    amount in 50.0..<100.0 -> 0.05
+    amount in 100.0..<500.0 -> 0.1
     else -> 0.15
 }
 

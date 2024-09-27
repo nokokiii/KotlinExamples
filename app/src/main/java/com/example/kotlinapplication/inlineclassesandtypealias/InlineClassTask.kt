@@ -3,13 +3,19 @@ package com.example.kotlinapplication.inlineclassesandtypealias
 // TODO: Poniższy kod posiada buga: wartości są błędnie przypisywane
 // Zaproponuj rozwiązanie, które zapobiegnie tego typu błędom
 // Wykorzystaj do tego inline classes
-fun processOrder(userId: String, orderId: String) {
+@JvmInline
+value class OrderId(val value : String)
+@JvmInline
+value class UserId(val value : String)
+
+
+fun processOrder(userId: UserId, orderId: OrderId) {
     println("Processing order with ID $orderId for user $userId")
 }
 
 fun main() {
-        val userId = "user123"
-        val orderId = "ORD-456"
+        val userId = UserId("user123")
+        val orderId = OrderId("ORD-456")
 
-        processOrder(orderId, userId)
+        processOrder(userId, orderId)
 }
