@@ -8,8 +8,10 @@ fun main() {
     val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
     val doubledNumbers = listOf<Int>() // TODO: podwój elementy z listy, wykorzystaj function reference
+    doubledNumbers.forEach(::double)
     println("Doubled Numbers: $doubledNumbers")
 
     val evenNumbers = listOf<Int>()  // TODO: odfiltruj nieparzyste wartości, wykorzystaj function reference
+    evenNumbers.filter(::isEven)
     println("Even Numbers: $evenNumbers")
 }

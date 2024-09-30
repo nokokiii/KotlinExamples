@@ -1,6 +1,7 @@
 package com.example.kotlinapplication.ranges
 
 fun isPrime(number: Int): Boolean {
+    (2..<number).forEach { if (number % it == 0) return false }
     return true
 }
 

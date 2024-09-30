@@ -9,6 +9,12 @@ class SetOnce<T>(private var value: T? = null) {
 
     operator fun setValue(thisRef: Any?, property: KProperty<*>, newValue: T?) {
         // TODO: Ustaw wartość tylko jeśli jeszcze nie jest ustawiona, w przeciwnym wypadku rzuć wyjątek
+        if (value == null) {
+            value = newValue
+            println("ustawiono nie można więcej zmieniać")
+        } else {
+            throw Exception()
+        }
     }
 }
 

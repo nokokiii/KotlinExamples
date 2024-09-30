@@ -3,7 +3,7 @@ package com.example.kotlinapplication.ranges
 // TODO:
 // 1. Stwórz funkcję, która będzie wypisywać parzyste liczby z podanego przedziału
 fun printEvenNumbersInRange(start: Int, end: Int) {
-
+    for (i in start..end) println(i)
 }
 
 fun main() {

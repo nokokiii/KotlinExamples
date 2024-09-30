@@ -27,16 +27,21 @@ class FileLogger : Logger {
 
 // TODO: Stwórz klasę Service, która będzie implementowała interface Logger i doda do niego dodatkową funkcję performAction
 // Nie implementuj istniejących funkcji z interfacu Logger, tylko wykorzystaj do tego class delegation
+class Service(private val l : Logger) : Logger by l {
+    fun performAction() {
+        println("Performing action")
+    }
+}
 
 fun main() {
     // TODO: Odkomentuj
-//    val consoleService = Service(ConsoleLogger())
-//    consoleService.performAction()
-//    consoleService.logError("Something went wrong with the console logger")
-//
-//    println("\nSwitching to FileLogger\n")
-//
-//    val fileService = Service(FileLogger())
-//    fileService.performAction()
-//    fileService.logInfo("This will be logged in a file")
+    val consoleService = Service(ConsoleLogger())
+    consoleService.performAction()
+    consoleService.logError("Something went wrong with the console logger")
+
+    println("\nSwitching to FileLogger\n")
+
+    val fileService = Service(FileLogger())
+    fileService.performAction()
+    fileService.logInfo("This will be logged in a file")
 }
